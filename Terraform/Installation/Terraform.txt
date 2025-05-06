@@ -1,0 +1,16 @@
+1. Install Terraform on RockyLinux (CentOS/RHEL)
+[root@sample ]# sudo yum install -y yum-utils
+                sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+                sudo yum -y install terraform
+
+
+2. Create a directory to store Terraform Files, just to be organized.
+[root@sample ]# cd /etc
+                mkdir terraform-files
+		cd terraform-files
+
+[root@sample terraform-files]
+
+
+
+Now you are ready to create .tf scripts. See TFScripts Folder.

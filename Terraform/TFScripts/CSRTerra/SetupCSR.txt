@@ -1,0 +1,34 @@
+!@CSR
+conf t
+ hostname DEVOPS
+ enable secret pass
+ service password-encryption
+ no logging cons
+ no ip domain lookup
+ !
+ int g1
+  ip add dhcp
+  no shut
+ int g2
+  ip add 192.168.102.11 255.255.255.0
+  no shut
+ int g3
+  ip add 192.168.103.11 255.255.255.0
+  no shut
+ !
+ ip domain name devops.com
+ username admin privilege 15 secret pass
+ crypto key generate rsa modulus 2048 label devops exportable
+ ip ssh rsa keypair-name devops
+ ip shh version 2
+ !
+ ip http secure-server
+ ip http authentication local
+ restconf
+ !
+ line vty 0 14
+  password pass
+  login local
+  transport input all
+  exec-timeout 0 0
+  end
