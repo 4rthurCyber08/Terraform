@@ -16,6 +16,6 @@ resource "iosxe_interface_loopback" "example" {
   name               = 200
   description        = "My First TF Script Attempt"
   shutdown           = false
-  ipv4_address       = "2.2.2.2"
+  ipv4_address       = "172.16.254.254"
   ipv4_address_mask  = "255.255.255.255"
 }
